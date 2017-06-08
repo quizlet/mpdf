@@ -13158,8 +13158,10 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 							$bak_x = $this->x;
 							$this->DivLn($divh, -3, false);
 							// Reset current block fill
-							$bcor = $this->blk[$this->blklvl]['bgcolorarray'];
-							$this->SetFColor($bcor);
+							if (isset($this->blk[$this->blklvl]['bgcolorarray'])) {
+								$bcor = $this->blk[$this->blklvl]['bgcolorarray'];
+								$this->SetFColor($bcor);
+							}
 							$this->x = $bak_x;
 						}
 					}
@@ -23564,9 +23566,11 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 									$this->DivLn($divh, -3, false);
 									$outerfilled = $this->y + $divh;
 									// Reset current block fill
-									$bcor = $this->blk[$this->blklvl]['bgcolorarray'];
-									if ($bcor) {
-										$this->SetFColor($bcor);
+									if (isset($this->blk[$this->blklvl]['bgcolorarray'])) {
+										$bcor = $this->blk[$this->blklvl]['bgcolorarray'];
+										if ($bcor) {
+											$this->SetFColor($bcor);
+										}
 									}
 									$this->x = $bak_x;
 									$this->y = $bak_y;
@@ -26354,7 +26358,7 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 			$newcolumn = 0;
 			foreach ($this->columnbuffer as $key => $s) {
 				if (isset($s['rel_y'])) { // only process position sensitive data
-					if ($s['rel_y'] >= $cbr[$newcolumn]) {
+					if (array_key_exists($newcolumn, $cbr) && $s['rel_y'] >= $cbr[$newcolumn]) {
 						$newcolumn++;
 					} else {
 						$newcolumn = $last_new_col;
