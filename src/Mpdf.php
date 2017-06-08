@@ -26661,7 +26661,7 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 						(preg_match('/\d+\.\d\d+ (\d+\.\d\d+) m/', $t)) ||
 						(preg_match('/\d+\.\d\d+ (\d+\.\d\d+) \d+\.\d\d+ \d+\.\d\d+ \d+\.\d\d+ \d+\.\d\d+ c/', $t))) {
 						$clb = $s['y'] + $s['h'];
-						if ($clb > $this->ColDetails[$s['col']]['max_bottom']) {
+						if (array_key_exists('max_bottom', $this->ColDetails[$s['col']]) && $clb > $this->ColDetails[$s['col']]['max_bottom']) {
 							$this->ColDetails[$s['col']]['max_bottom'] = $clb;
 						}
 						if ($clb > $lowest_bottom_y) {
