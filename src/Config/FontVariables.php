@@ -57,6 +57,7 @@ class FontVariables
 				'ocr-b' => 'ocrb',
 				'ocr-b10bt' => 'ocrb',
 				'damase' => 'mph2bdamase',
+				'hurme' => 'hurmegeometricsans2',
 			],
 
 			/*
@@ -94,6 +95,11 @@ class FontVariables
 			 */
 
 			'fontdata' => [
+				"hurmegeometricsans2" => [
+					'R' => "hurmegeometricsans_no2_4_regular-webfont.ttf",
+					'B' => "hurmegeometricsans_no2_6_bold-webfont.ttf",
+					'useOTL' => 0xFF,
+				]
 				"dejavusanscondensed" => [
 					'R' => "DejaVuSansCondensed.ttf",
 					'B' => "DejaVuSansCondensed-Bold.ttf",
@@ -306,7 +312,7 @@ class FontVariables
 			//     (Otherwise the order is irrelevant)
 			// Use the mPDF font-family names i.e. lowercase and no spaces (after any translations in $fonttrans)
 			// Always include "sans-serif", "serif" and "monospace" etc.
-			'sans_fonts' => ['dejavusanscondensed', 'sans', 'sans-serif', 'cursive', 'fantasy', 'dejavusans', 'freesans', 'liberationsans',
+			'sans_fonts' => ['hurmegeometricsans2', 'dejavusanscondensed', 'sans', 'sans-serif', 'cursive', 'fantasy', 'dejavusans', 'freesans', 'liberationsans',
 				'arial', 'helvetica', 'verdana', 'geneva', 'lucida', 'arialnarrow', 'arialblack', 'arialunicodems',
 				'franklin', 'franklingothicbook', 'tahoma', 'garuda', 'calibri', 'trebuchet', 'lucidagrande', 'microsoftsansserif',
 				'trebuchetms', 'lucidasansunicode', 'franklingothicmedium', 'albertusmedium', 'xbriyaz', 'albasuper', 'quillscript',
