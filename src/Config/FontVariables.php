@@ -99,7 +99,7 @@ class FontVariables
 					'R' => "hurmegeometricsans_no2_4_regular-webfont.ttf",
 					'B' => "hurmegeometricsans_no2_6_bold-webfont.ttf",
 					'useOTL' => 0xFF,
-				]
+				],
 				"dejavusanscondensed" => [
 					'R' => "DejaVuSansCondensed.ttf",
 					'B' => "DejaVuSansCondensed-Bold.ttf",
